@@ -1,13 +1,41 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/today/today",
+    "pages/discover/discover",
+    "pages/person/person"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "向日葵计划",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#FF0000",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/today/today",
+        "text": "今天",
+        "iconPath": "images/icon/0.png",
+        "selectedIconPath": "images/icon/1.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "images/icon/0.png",
+        "selectedIconPath": "images/icon/1.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "images/icon/0.png",
+        "selectedIconPath": "images/icon/1.png"
+      }
+    ]
+  },
+  "debug": false,
   "sitemapLocation": "sitemap.json"
 }
