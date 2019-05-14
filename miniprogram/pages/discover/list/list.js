@@ -1,15 +1,18 @@
-const db = wx.cloud.database()
-const banners = db.collection('banners')
+// miniprogram/pages/discover/list/list.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    banners: [],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.loadBanners();
+
   },
 
   /**
@@ -59,34 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  loadBanners: function () {
-    banners.where({
-      type: 'discover-top'
-    })
-      .field({
-        url: true
-      })
-      .get()
-      .then(res => {
-        console.log(res)
-        this.setData({
-          banners: res.data
-        })
-      })
-  },
-  navigate:function(e){
-    console.log(e)
-    const id=e.target.id
-    if(id==0){
-      wx.navigateTo({
-        url: 'plan/plan'
-      })
-    }
-    if (id == 1) {
-      wx.navigateTo({
-        url: 'list/list'
-      })
-    }
   }
 })

@@ -1,0 +1,57 @@
+.button{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  height: 96rpx;
+  width: 96rpx;
+}
+.button image{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background: #FFFFFF
+}
+.banners{
+  width: 750rpx;
+  height:390rpx;
+}
+.card{
+  display: flex;
+  height:260rpx
+}
+.card .left{
+  width: 300rpx;
+  height: 260rpx
+}
+.card .left image{
+  width: 260rpx;
+  height: 260rpx;
+  border-radius: 15px;
+  margin-left:20rpx;
+}
+.card .right{
+  display: flex;
+  flex-direction: column;
+  width: 440rpx;
+  height: 260rpx;
+  position:relative;
+}
+.card .right .title{
+  font-size:38rpx;
+  font-weight:900;
+}
+.card .right .weight{
+  font-size:34rpx;
+  font-weight:900;
+}
+.card .right .area{
+  font-size:30rpx;
+  font-weight:500;
+}
+.card .right .time{
+  font-size:30rpx;
+  font-weight:400;
+  position:absolute;
+  bottom:0;
+  right:0;
+}

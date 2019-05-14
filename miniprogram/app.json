@@ -2,7 +2,11 @@
   "pages": [
     "pages/today/today",
     "pages/discover/discover",
-    "pages/person/person"
+    "pages/person/person",
+    "pages/discover/plan/plan",
+    "pages/discover/list/list",
+    "pages/today/create/create",
+    "pages/a/a"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

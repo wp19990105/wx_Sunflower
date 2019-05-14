@@ -1,0 +1,8 @@
+<view bindtap='showModal'>点击弹出</view>
+<view>{{!beginDate && !endDate ? "点击我选日期范围" : beginDate + " 至 " + endDate}}</view>
+<view>
+  <view class="modal_screen" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="animation" wx:if="{{showModalStatus}}">
+    <my-calendar start="{{beginDate}}" stop="{{endDate}}" bind:cancel="calendarCancel" bind:confirm="calendarConfirm"></my-calendar>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<template name='button'>
+  <view class='button'>
+    <navigator url='{{url}}'>
+      <image src='{{src}}'></image>
+    </navigator>
+  </view>
+</template>
+<template name='banners'>
+  <swiper class='banners' indicator-dots='true' autoplay='true' interval='5000'>
+    <swiper-item wx:for='{{banners}}'>
+      <image class='banners' src='{{item.url}}' />
+    </swiper-item>
+  </swiper>
+</template>
+<template name='card'>
+  <view class='card'>
+    <view class='left'>
+      <image src='{{src}}'></image>
+    </view>
+    <view class='right'>
+      <text class='title'>{{title}}</text>
+      <text class='weight'>{{weight}}</text>
+      <text class='area'>{{area}}</text>
+      <text class='time'>{{time}}</text>
+    </view>
+    <view class='hr'></view>
+  </view>
+</template>
