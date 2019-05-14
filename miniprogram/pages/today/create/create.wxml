@@ -1,0 +1,56 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view>
+    <text>计划名称</text>
+    <input placeholder="给你的长期计划取一个响亮的名字吧" name='planName' />
+  </view>
+  <view>
+    <text>计划时段</text>
+    <view class='chooseTime'>
+      <input value='{{!beginDate && !endDate ? "请选择日期范围" : beginDate + " 至 " + endDate}}' />
+      <block bindtap='showModal' id='1'>
+      <image src='../../../images/icon/1.png' ></image>
+      </block>
+    </view>
+  </view>
+  <view>
+    <text>添加具体事项和时间</text>
+    <view class='chooseTime'>
+      <view class='matter'>
+        <input placeholder="请输入事项名称"></input>
+        <input value='{{!beginDate && !endDate ? "请选择日期范围" : beginDate + " 至 " + endDate}}' />
+      </view>
+      <image src='../../../images/icon/1.png' bindtap='showModal'></image>
+    </view>
+  </view>
+  <view>
+    <block wx:for='{{matterNumber}}' wx:key="*this">
+      <view class='chooseTime'>
+        <view class='matter'>
+          <input placeholder="请输入事项名称"></input>
+          <input value='{{!beginDate && !endDate ? "请选择日期范围" : beginDate + " 至 " + endDate}}' />
+        </view>
+        <image src='../../../images/icon/1.png'bindtap='showModal'/>
+      </view>
+    </block>
+  </view>
+  <view>
+    <image src='../../../images/icon/1.png' class='add' bindtap='add'></image>
+  </view>
+  <view>
+    <text>备注</text>
+    <textarea placeholder="备注一下你学习的资料或者一句话" name="textarea" />
+  </view>
+  <view>
+  <text>是否公开</text>
+   <switch checked />
+  </view>
+  <view>
+    <button form-type="submit" class="btn">创建</button>
+  </view>
+</form>
+<view>
+  <view class="modal_screen" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="animation" wx:if="{{showModalStatus}}">
+    <my-calendar start="{{beginDate}}" stop="{{endDate}}" bind:cancel="calendarCancel" bind:confirm="calendarConfirm"></my-calendar>
+  </view>
+</view>

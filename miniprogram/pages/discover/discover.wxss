@@ -1,1 +1,27 @@
-/* pages/discover/discover.wxss */
+@import '../../template/template.wxss';
+
+.hr10 {
+  height: 10px;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  background-color: #58d68d;
+  border-radius: 20px;
+  width: 140px;
+  height: 80px;
+  text-align: center;
+  vertical-align:middle;
+  margin: 0 auto;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  background-color: #d35400;
+  border-radius: 20px;
+  width: 140px;
+  height: 80px;
+  text-align: center;
+  margin: 0 auto;
+}

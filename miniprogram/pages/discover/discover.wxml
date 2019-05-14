@@ -1,2 +1,17 @@
-<!--pages/discover/discover.wxml-->
-<text>pages/discover/discover.wxml</text>
+<import src='../../template/template.wxml' />
+<template is="banners" data="{{banners:banners}}" />
+<view class='hr10'></view>
+<view class='panel'>
+  <view class='plan' id='0' bindtap='navigate'>
+    <text>我的计划</text>
+  </view>
+  <view class='list' id='1' bindtap='navigate'>
+    <text>排行榜</text>
+  </view>
+</view>
+<view class='panel'>
+  <text>热门计划</text>
+</view>
+<view class='panel'>
+  <text>推荐计划</text>
+</view>

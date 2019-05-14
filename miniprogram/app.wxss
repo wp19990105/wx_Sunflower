@@ -1,19 +1,25 @@
-/**app.wxss**/
-.container {
+page{
+  background-color: #F8F8F8;
+  font-size: 16px;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.hr{
+  height: 4px;
+  background-color:#FFFFFF;  
+}
+.hr0{
+  margin-top:4px;
+  height: 2rpx;
+  background-color: #F8F8F8; 
+}
+.panel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-} 
-
-button {
-  background: initial;
+  width:710rpx;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 0 auto;
 }
 
-button:focus{
-  outline: 0;
-}
 
-button::after{
-  border: none;
-}
+
+
