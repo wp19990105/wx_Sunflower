@@ -1,2 +1,7 @@
-<!--pages/today/today.wxml-->
-<text>pages/today/today.wxml</text>
+<view wx:if='{{!openid}}'>
+  <text>请先登陆</text>
+</view>
+<view wx:if='{{openid}}'>
+  1
+
+</view>

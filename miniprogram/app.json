@@ -6,7 +6,8 @@
     "pages/discover/plan/plan",
     "pages/discover/list/list",
     "pages/today/create/create",
-    "pages/a/a"
+    "pages/a/a",
+    "pages/login/login"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -40,6 +41,6 @@
       }
     ]
   },
-  "debug": false,
+  "debug": true,
   "sitemapLocation": "sitemap.json"
 }

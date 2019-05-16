@@ -1,0 +1,3 @@
+<view class='button-view'>
+  <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='login'>微信登陆</button>
+</view>

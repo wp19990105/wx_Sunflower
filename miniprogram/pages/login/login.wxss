@@ -1,0 +1,13 @@
+page{
+   background-size:100% 100%;
+}
+.button-view{
+  position: fixed;
+  bottom: 20px;
+  width:100%;
+  text-align:center;
+}
+.login{
+  width: 150px;
+  height: 50px
+}
