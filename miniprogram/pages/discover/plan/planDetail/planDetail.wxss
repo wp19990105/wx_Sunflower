@@ -1,0 +1,105 @@
+.name-number {
+  flex-direction: column;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.nametext {
+  font-size: 25px;
+}
+
+.day {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.day image {
+  width: 30px;
+  height: 30px;
+}
+
+.numbers {
+  display: flex;
+  margin: 10px;
+}
+
+.number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+}
+
+.title {
+  margin: 10px;
+  display: block;
+  background-color: #f00;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+.date-day {
+  height: 40px;
+  align-items: center;
+}
+
+.date-day .text1 {
+  padding-left: 10px;
+}
+
+.date-day .text2 {
+  position: absolute;
+  right: 20px;
+}
+
+.matter {
+  padding-left: 10px;
+  align-items: center;
+}
+
+.name-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.process {
+  position: absolute;
+  right: 20px;
+}
+
+.remarks {
+  margin: 10px;
+}
+
+.remarks text {
+  padding: 10px;
+}
+
+.show-edit {
+  display: flex;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  padding-left: 200rpx;
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  align-items: center;
+}
+
+.edit image {
+  width: 30px;
+  height: 30px;
+}

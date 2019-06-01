@@ -1,0 +1,6 @@
+<view class='search'>
+  <input focus='true' bindinput='search'></input>
+</view>
+<view wx:for='{{plans}}'>
+{{item.name}}
+</view>

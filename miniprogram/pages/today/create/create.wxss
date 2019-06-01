@@ -1,31 +1,40 @@
-.chooseTime{
-  display:flex;
-  background-color:#58D68D; 
-  height:48px;
+.chooseTime {
+  display: flex;
+  height: 48px;
+  width: 710rpx;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0 auto;
+  align-items: center;
 }
-.chooseTime image{
-  width:48px;
-  height:48px;
-  position:absolute;
-  right:0;
+
+.chooseTime image {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
 }
-.btn{
+
+.btn {
   position: fixed;
   bottom: 0px;
   width: 750rpx;
   background-color: #f00;
   color: #fff;
 }
-.matter{
+
+.matter {
   display: flex;
   flex-direction: column;
 }
-.add{
-  width:48px;
-  height:48px;
-  position:relative;
-  left:660rpx;
+
+.add {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  left: 646rpx;
 }
+
 .modal_screen {
   width: 100%;
   height: 100%;
@@ -38,6 +47,7 @@
   z-index: 9;
   color: #fff;
 }
+
 .animation {
   width: 100%;
   position: fixed;
@@ -45,4 +55,31 @@
   left: 0;
   z-index: 10;
   background: #fff;
+}
+
+.name {
+  background: #999;
+  border-radius: 5px;
+  color: white;
+  margin: 10px 0 0 10px;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  width: 80px;
+}
+
+.planname {
+  padding: 10px 0;
+}
+.remarks{
+  width: 710rpx;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.show{
+  margin-bottom:80px
+}
+input{
+  width:300px
 }

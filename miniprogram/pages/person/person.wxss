@@ -1,1 +1,103 @@
-/* pages/person/person.wxss */
+.info {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 20rpx;
+}
+
+.userinfo-nickname {
+  position: absolute;
+  left: 170rpx;
+  font-size: 38rpx;
+}
+
+.sun{
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 40px;
+}
+.money {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  right: 10px;
+}
+
+.panel {
+  flex-direction: column;
+}
+
+.motto {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.numbers {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.number {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+}
+
+.study {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 320rpx;
+  position: relative;
+  left: 20rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.study text{
+  padding-left:20px
+}
+.list {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 20rpx;
+  padding-left:10px;
+}
+.list text{
+  padding-left:20px
+}
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+}
+
+.hr10 {
+  height: 10px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+.share{
+  width:750rpx;
+  padding-left:0
+}

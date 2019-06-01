@@ -1,25 +1,26 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view>
-    <text>计划名称</text>
-    <input placeholder="给你的长期计划取一个响亮的名字吧" name='planName' />
+    <text class='name'>计划名称</text>
+    <input placeholder="给你的长期计划取一个响亮的名字吧" name='planName' class='panel planname' />
   </view>
   <view>
-    <text>计划时段</text>
+    <text class='name'>计划时段</text>
     <view class='chooseTime'>
+    <text>{{!beginDate[0] && !endDate[0] ? "请选择日期范围" : beginDate[0] + " 至 " + endDate[0]}}</text>
       <input value='{{!beginDate[0] && !endDate[0] ? "请选择日期范围" : beginDate[0] + " 至 " + endDate[0]}}' />
-      <view >
-      <image src='../../../images/icon/1.png' bindtap='showModal' id='0' ></image>
-      </view>
+
+      <image src='../../../images/icon/date.png' bindtap='showModal' id='0'></image>
+
     </view>
   </view>
   <view>
-    <text>添加具体事项和时间</text>
+    <text class='name'>具体事项</text>
     <view class='chooseTime'>
       <view class='matter'>
         <input placeholder="请输入事项名称" id='1' bindblur='getValue'></input>
         <input value='{{!beginDate[1] && !endDate[1] ? "请选择日期范围" : beginDate[1] + " 至 " + endDate[1]}}' />
       </view>
-      <image src='../../../images/icon/1.png' bindtap='showModal' id='1'></image>
+      <image src='../../../images/icon/matter.png' bindtap='showModal' id='1'></image>
     </view>
   </view>
   <view>
@@ -27,22 +28,22 @@
       <view class='chooseTime'>
         <view class='matter'>
           <input placeholder="请输入事项名称" id='{{index+2}}' bindblur='getValue'></input>
-          <input value='{{!beginDate[number] && !endDate[number] ? "请选择日期范围" : beginDate[number] + " 至 " + endDate[number]}}'  />
+          <input value='{{!beginDate[index+2] && !endDate[index+2] ? "请选择日期范围" : beginDate[index+2] + " 至 " + endDate[index+2]}}' />
         </view>
-        <image src='../../../images/icon/1.png'bindtap='showModal' id='{{number}}'/>
+        <image src='../../../images/icon/matter.png' bindtap='showModal' id='{{index+2}}' />
       </view>
     </block>
   </view>
   <view>
-    <image src='../../../images/icon/1.png' class='add' bindtap='add'></image>
+    <image src='../../../images/icon/addmatter.png' class='add' bindtap='add'></image>
   </view>
   <view>
-    <text>备注</text>
-    <textarea placeholder="备注一下你学习的资料或者一句话" name="remarkes" />
+    <text class='name'>补充说明</text>
+    <textarea placeholder="备注一下你学习的资料或者一句话" name="remarks" class='remarks' />
   </view>
-  <view>
-  <text>是否公开</text>
-   <switch checked name='show'/>
+  <view class='show'>
+    <text>是否公开</text>
+    <switch checked name='show' />
   </view>
   <view>
     <button form-type="submit" class="btn">创建</button>

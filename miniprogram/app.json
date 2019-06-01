@@ -7,7 +7,15 @@
     "pages/discover/list/list",
     "pages/today/create/create",
     "pages/a/a",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/person/motto/motto",
+    "pages/person/userview/userview",
+    "pages/person/introduce/introduce",
+    "pages/discover/recommendPlan/recommendPlan",
+    "pages/discover/othersPage/othersPage",
+    "pages/discover/search/search",
+    "pages/discover/plan/planDetail/planDetail",
+    "pages/discover/recommendPlan/acceptplan/acceptplan"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -17,27 +25,27 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#000000",
-    "selectedColor": "#FF0000",
+    "color": "#BFBFBF",
+    "selectedColor": "#2C2C2C",
     "backgroundColor": "#FFFFFF",
     "list": [
       {
         "pagePath": "pages/today/today",
         "text": "今天",
-        "iconPath": "images/icon/0.png",
-        "selectedIconPath": "images/icon/1.png"
+        "iconPath": "images/icon/today.png",
+        "selectedIconPath": "images/icon/today1.png"
       },
       {
         "pagePath": "pages/discover/discover",
         "text": "发现",
-        "iconPath": "images/icon/0.png",
-        "selectedIconPath": "images/icon/1.png"
+        "iconPath": "images/icon/discover.png",
+        "selectedIconPath": "images/icon/discover1.png"
       },
       {
         "pagePath": "pages/person/person",
         "text": "我的",
-        "iconPath": "images/icon/0.png",
-        "selectedIconPath": "images/icon/1.png"
+        "iconPath": "images/icon/person.png",
+        "selectedIconPath": "images/icon/person1.png"
       }
     ]
   },

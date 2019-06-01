@@ -3,6 +3,7 @@ const banners = db.collection('banners')
 Page({
   data: {
     banners: [],
+    plan:[]
   },
 
   /**
@@ -10,6 +11,7 @@ Page({
    */
   onLoad: function (options) {
     this.loadBanners();
+    this.recommendPlan()
   },
 
   /**
@@ -88,5 +90,38 @@ Page({
         url: 'list/list'
       })
     }
+  },
+  recommendPlan(){
+    //这是一个个性化推荐的云函数(模拟)
+    wx.cloud.callFunction({
+      name: 'recommendPlan',
+    }).then(res => {
+      console.log(res)
+      this.setData({
+        plan:res.result.recommendPlan
+      })
+    }).catch(err => {
+
+    })
+  },
+  navigatePersonal:function(e){
+    console.log(e)
+    const id = e.target.id
+    wx.navigateTo({
+      url: 'othersPage/othersPage?id=' + id,
+    })
+  },
+  navigatePlan: function (e) {
+    console.log(e)
+    const id=e.target.id
+    wx.navigateTo({
+      url: 'recommendPlan/recommendPlan?id='+id,
+    })
+  },
+  search:function(e){
+    console.log(e)
+    wx.navigateTo({
+      url: 'search/search',
+    })
   }
 })

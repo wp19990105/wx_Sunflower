@@ -1,0 +1,60 @@
+<view class='panel'>
+  <view class='info'>
+    <image class='userinfo-avatar' src='{{user.avatarUrl}}'></image>
+    <text class='userinfo-nickname'>{{user.nickName}}</text>
+    <image src='../../../images/icon/sun.png' class='sun'></image>
+    <view class='money'>
+      <text>{{user.money}}</text>
+      <text>阳光</text>
+    </view>
+  </view>
+  <view class='motto'>
+    <text>{{user.motto}}</text>
+  </view>
+  <view class='numbers'>
+    <view class='number'>
+      <text>{{user.accept}}</text>
+      <text>采纳数</text>
+    </view>
+    <view class='number'>
+      <text>{{user.collect}}</text>
+      <text>收藏数</text>
+    </view>
+    <view class='number'>
+      <text>{{user.like}}</text>
+      <text>点赞数</text>
+    </view>
+    <view class='number'>
+      <text>{{user.power}}</text>
+      <text>助力数</text>
+    </view>
+  </view>
+</view>
+
+<view>Ta的计划</view>
+
+<block wx:for='{{plans}}' wx:key="{{item._id}}">
+  <view class='plan plan1' id='{{item._id}}' catchtap='plandetail'>
+    <view class='name-date'>
+      <text class='name'>{{item.name}}</text>
+      <text class='date'>{{item.begin}}——{{item.end}}</text>
+    </view>
+    <view class='progress'>
+      <view class='progress-time'>
+        <image src='../../../images/icon/progress.png' />
+        <text>时间进度</text>
+      </view>
+
+      <block wx:if='{{item.result==-1}}'>
+        <text style='color:blue'>未开始</text>
+      </block>
+      <block wx:if='{{item.result==0}}'>
+        <text>进行中</text>
+      </block>
+      <block wx:if='{{item.result==1}}'>
+        <text style='color:red'>已结束</text>
+      </block>
+    </view>
+  </view>
+  <view class='hr10'></view>
+</block>

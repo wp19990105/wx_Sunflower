@@ -1,1 +1,43 @@
 @import '../../../template/template.wxss';
+
+.plan {
+  display: flex;
+  height: 60px;
+  align-items: center;
+}
+
+.name-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  width: 200px;
+}
+
+.name {
+  background-color: #fff;
+}
+
+.date {
+  background-color: #fff;
+}
+
+.progress {
+  position: absolute;
+  right: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.progress image {
+  width: 30px;
+  height: 30px;
+}
+.progress-time{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+.hr10 {
+  height: 10px;
+}

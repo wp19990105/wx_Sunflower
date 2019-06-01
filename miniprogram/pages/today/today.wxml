@@ -2,6 +2,21 @@
   <text>请先登陆</text>
 </view>
 <view wx:if='{{openid}}'>
-  1
-
+  <view wx:if='{{planNumber==0}}'>
+    您最近无要完成的计划
+  </view>
+  <view wx:if='{{planNumber!=0}}'>
+    <view wx:for='{{plans}}' wx:key="_id">
+      <text>{{item.planName}}</text>
+      <view wx:if='{{item.mattersArr.length==0}}'>
+        <text>该计划今日暂无事项</text>
+      </view>
+      <view>
+        <slideitem id="slideitem-{{item.planid+item.matterid}}" class='cell-class' row="{{item.planid+item.matterid}}" itemColor="#fff" bind:deleteItemEvent='deleteAction' bind:slideItemEvent='slideAction' bind:selectItemEvent='selectCellAction' cellHeight="120rpx"
+          wx:for='{{item.mattersArr}}' wx:key="{{item.planid+item.matterid}}" word='完成' delcolor='#00FF00'>
+          <text style='width:100%;height:100%;line-height:120rpx;margin-left:40rpx'>{{item.name}}{{item.day}}天</text>
+        </slideitem>
+      </view>
+    </view>
+  </view>
 </view>

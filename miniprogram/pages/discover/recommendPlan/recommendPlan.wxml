@@ -1,0 +1,59 @@
+<view class='panel name-number'>
+  <view class='name'>
+    <text class='nametext'>{{plan.name}}</text>
+    <view class='day' catchtap='like'>
+      <image src='{{likesrc}}' />
+    </view>
+  </view>
+  <view class='info'>
+    <image class='userinfo-avatar' src='{{user.avatarUrl}}'></image>
+    <text class='userinfo-nickname'>{{user.nickName}}</text>
+  </view>
+
+  <view class='numbers'>
+    <view class='number'>
+      <text>{{plan.accept}}</text>
+      <text>采纳数</text>
+    </view>
+    <view class='number'>
+      <text>{{plan.collect}}</text>
+      <text>收藏数</text>
+    </view>
+    <view class='number'>
+      <text>{{plan.like}}</text>
+      <text>点赞数</text>
+    </view>
+  </view>
+</view>
+
+<text class='title'>计划时段</text>
+<view class='panel date-day'>
+  <text class='text1'>{{plan.beginDate+'——'+plan.endDate}}</text>
+  <text class='text2'>{{plan.day}}天</text>
+</view>
+
+<text class='title'>具体事项</text>
+<view class='panel matter' wx:for='{{plan.matters}}'>
+  <view class='name-date'>
+    <text>{{item.name}}</text>
+    <text>{{item.beginDate+'——'+item.endDate}}</text>
+  </view>
+  <view class='process'>
+      <text>{{item.day}}天</text>
+  </view>
+
+</view>
+<text class='title'>补充说明</text>
+<view class='panel remarks'>
+  <text>{{plan.remarks}}</text>
+</view>
+<view class='show-edit'>
+  <view class='show' catchtap='accept'>
+    <image src='{{acceptsrc}}' />
+    <text>采纳</text>
+  </view>
+  <view class='edit' catchtap='collect'>
+    <image src='{{collectsrc}}' />
+    <text>收藏</text>
+  </view>
+</view>

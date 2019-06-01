@@ -1,0 +1,71 @@
+<view class='panel name-number'>
+  <view class='name'>
+    <text class='nametext'>{{plan.name}}</text>
+    <view class='day'>
+      <image src='../../../../images/icon/date.png' />
+      <text>{{plan.planSpareday}}</text>
+    </view>
+  </view>
+
+  <view class='numbers'>
+    <view class='number'>
+      <text>{{plan.accept}}</text>
+      <text>采纳数</text>
+    </view>
+    <view class='number'>
+      <text>{{plan.collect}}</text>
+      <text>收藏数</text>
+    </view>
+    <view class='number'>
+      <text>{{plan.like}}</text>
+      <text>点赞数</text>
+    </view>
+  </view>
+</view>
+
+<text class='title'>计划时段</text>
+<view class='panel date-day'>
+  <text class='text1'>{{plan.beginDate+'——'+plan.endDate}}</text>
+  <text class='text2'>{{plan.day}}天</text>
+</view>
+
+<text class='title'>具体事项</text>
+<view class='panel matter' wx:for='{{plan.matters}}'>
+  <view class='name-date'>
+    <text>{{item.name}}</text>
+    <text>{{item.beginDate+'——'+item.endDate}}</text>
+  </view>
+  <view class='process'>
+    <block wx:if='{{item.process==-1}}'>
+      <text style='color:blue'>未开始</text>
+    </block>
+    <block wx:if='{{item.process==0}}'>
+      <text>进行中</text>
+    </block>
+    <block wx:if='{{item.process==1}}'>
+      <text style='color:red'>已结束</text>
+    </block>
+
+  </view>
+
+</view>
+<text class='title'>补充说明</text>
+<view class='panel remarks'>
+  <text>{{plan.remarks}}</text>
+</view>
+<view class='show-edit'>
+  <view class='show'>
+    <block wx:if='{{plan.show==true}}'>
+      <switch checked='true' disabled='true' />
+      <text>已公开</text>
+    </block>
+    <block wx:if='{{plan.show==flase}}'>
+      <switch checked disabled='true' />
+      <text>未公开</text>
+    </block>
+  </view>
+  <view class='edit'>
+    <image src='../../../../images/icon/edit.png' />
+    <text>编辑计划</text>
+  </view>
+</view>

@@ -3,25 +3,80 @@
 .hr10 {
   height: 10px;
 }
-
-.plan {
+.plan-list{
   display: flex;
-  flex-direction: column;
-  background-color: #58d68d;
-  border-radius: 20px;
-  width: 140px;
-  height: 80px;
-  text-align: center;
-  vertical-align:middle;
-  margin: 0 auto;
+  align-items: center;
+  background-color:#ffffff;
+  height:100px
 }
-.list {
+.plan {
+  border-radius: 10px;
+  width: 320rpx;
+  position: relative;
+  left: 20rpx;
+  height: 160rpx;
   display: flex;
   flex-direction: column;
-  background-color: #d35400;
-  border-radius: 20px;
-  width: 140px;
-  height: 80px;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.recommend {
+  display: flex;
+  width: 750rpx;
+  background-color: #fff;
   margin: 0 auto;
+  align-items: center;
+}
+
+.recommend text {
+  margin-left: 10px;
+}
+
+.search {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  left: 250px;
+}
+
+.recommendPlan {
+  margin-top: 3px;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 64rpx;
+  width: 64rpx;
+  height: 64rpx;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.name {
+  background-color: #fff;
+}
+
+.name text {
+  display: block;
+}
+
+.like {
+  position: absolute;
+  right: 20px;
+}
+
+.like image {
+  width: 16px;
+  height: 16px;
+}
+.like text{
+  color:#ff0000;
 }

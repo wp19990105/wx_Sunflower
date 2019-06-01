@@ -1,8 +1,12 @@
-<view bindtap='showModal'>点击弹出</view>
-<view>{{!beginDate && !endDate ? "点击我选日期范围" : beginDate + " 至 " + endDate}}</view>
-<view>
-  <view class="modal_screen" wx:if="{{showModalStatus}}"></view>
-  <view animation="{{animationData}}" class="animation" wx:if="{{showModalStatus}}">
-    <my-calendar start="{{beginDate}}" stop="{{endDate}}" bind:cancel="calendarCancel" bind:confirm="calendarConfirm"></my-calendar>
-  </view>
-</view>
+<!--index.wxml-->
+
+
+<!-- 
+itemColor: cell背景色
+deleteItemEvent:绑定删除事件
+slideItemEvent:绑定左滑动打开
+cellHeight:cell高度 
+-->
+<slideitem id="slideitem-{{index}}" class='cell-class' row="{{index}}" itemColor="#fff" bind:deleteItemEvent='deleteAction' bind:slideItemEvent='slideAction' bind:selectItemEvent='selectCellAction' cellHeight="120rpx" >
+  <text style='width:100%;height:100%;line-height:120rpx;margin-left:40rpx'>{{data}}</text>
+</slideitem>

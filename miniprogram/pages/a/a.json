@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "my-calendar": "../../component/My-calendar/my-calendar"
+    "slide-view": "../../component/slideitem/slideitem"
   }
 }

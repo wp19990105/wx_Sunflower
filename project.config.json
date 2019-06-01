@@ -6,13 +6,16 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"appid": "wxaf55801e35dc2a3c",
 	"projectname": "%E5%90%91%E6%97%A5%E8%91%B5",
-	"libVersion": "2.2.5",
+	"libVersion": "2.4.0",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -30,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -77,6 +80,28 @@
 					"id": -1,
 					"name": "登陆",
 					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/discover/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "个人计划详情",
+					"pathName": "pages/discover/plan/planDetail/planDetail",
+					"query": "id=57896b495ce50ecd035c416e7f203da7",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/discover/list/list",
+					"query": "",
 					"scene": null
 				}
 			]

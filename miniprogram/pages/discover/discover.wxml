@@ -1,17 +1,33 @@
 <import src='../../template/template.wxml' />
 <template is="banners" data="{{banners:banners}}" />
 <view class='hr10'></view>
-<view class='panel'>
-  <view class='plan' id='0' bindtap='navigate'>
+<view class='plan-list'>
+  <view class='plan' id='0' bindtap='navigate' style='background-color:#F8F8F8'>
+    <image src='../../images/icon/plan.png' class='icon'></image>
     <text>我的计划</text>
   </view>
-  <view class='list' id='1' bindtap='navigate'>
+  <view class='plan' style='left:90rpx;background-color:#F8F8F8' id='1' bindtap='navigate'>
+    <image src='../../images/icon/list.png' class='icon'></image>
     <text>排行榜</text>
   </view>
 </view>
-<view class='panel'>
-  <text>热门计划</text>
-</view>
-<view class='panel'>
+
+<view class='hr10'></view>
+
+<view class='recommend'>
   <text>推荐计划</text>
+  <view bindtap='search'>
+    <image src='../../images/icon/search.png' class='search' />
+  </view>
+</view>
+<view wx:for='{{plan}}' class='panel recommendPlan' id='{{item.plan_id}}' bindtap='navigatePlan'>
+  <image src='{{item.avatarUrl}}' class='avatar' id='{{item.user_id}}' catchtap='navigatePersonal' />
+  <view class='name'>
+    <text>{{item.planName}}</text>
+    <text>{{item.nickName}}</text>
+  </view>
+  <view class='like'>
+    <image src='../../images/icon/hot.png' />
+    <text>{{item.like}}</text>
+  </view>
 </view>

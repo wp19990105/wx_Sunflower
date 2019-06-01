@@ -1,0 +1,7 @@
+<form bindsubmit="formSubmit">
+
+<textarea placeholder='请输入反馈意见' name='view'/>
+
+    <button form-type="submit">确定</button>
+
+</form>

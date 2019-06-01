@@ -38,7 +38,22 @@ Page({
                 console.log(res.total)
                 if (res.total == 0) {
                   userInfo.add({
-                    data: e.detail.userInfo
+                    data:{
+                      avatarUrl: e.detail.userInfo.avatarUrl,
+                      city: e.detail.userInfo.city,
+                      country: e.detail.userInfo.country,
+                      gender: e.detail.userInfo.gender,
+                      language: e.detail.userInfo.language,
+                      nickName: e.detail.userInfo.nickName,
+                      province: e.detail.userInfo.province,
+
+                      accept:0,
+                      collect:0,
+                      money:0,
+                      power:0,
+                      like:0,
+                      motto:'点击修改个性签名'
+                    } 
                   }).then(res => {
                     //console.log(res)
                     wx.switchTab({

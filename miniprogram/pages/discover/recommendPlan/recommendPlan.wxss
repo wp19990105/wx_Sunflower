@@ -1,0 +1,36 @@
+@import '../plan/planDetail/planDetail.wxss';
+.show image {
+  width: 30px;
+  height: 30px;
+}
+.show {
+  display: flex;
+  flex-direction: column;
+  padding-left: 200rpx;
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  padding-left: 80px;
+  align-items: center;
+}
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  border-radius: 64rpx;
+  width: 64rpx;
+  height: 64rpx;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 20rpx;
+}
+
+.userinfo-nickname {
+  position: absolute;
+  left: 170rpx;
+  font-size: 38rpx;
+}
