@@ -3,7 +3,7 @@
 ## 2. 实现思路/架构图/流程图
 - 实现思路
 ***
-【首页】（https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E4%BB%8A%E5%A4%A9.jpg）
+[首页]（https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E4%BB%8A%E5%A4%A9.jpg）
 - 架构图
 - 流程图
 ## 3.项目效果图例
