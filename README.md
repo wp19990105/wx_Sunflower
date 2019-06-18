@@ -19,7 +19,7 @@
 
 - 流程图
 
-###### “计划详情”的实现思路
-![“详情”思路](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E8%AE%A1%E5%88%92%E8%AF%A6%E6%83%85.jpg)
+###### 主要功能流程
+![主要功能流程](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 ## 3.项目效果图例
 ## 4.源码链接
