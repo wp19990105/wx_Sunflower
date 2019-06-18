@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user: null
+    user: null,
+    powersrc:'../../../images/icon/power.png',
+    powernumber: 0, //点赞情况
   },
 
   /**
@@ -120,5 +122,31 @@ Page({
     wx.navigateTo({
       url: '../recommendPlan/recommendPlan?id='+id,
     })
+  },
+  power(e) {
+    console.log(e)
+    const that = this
+    if (e.currentTarget.id == '0') {
+      that.setData({
+        powersrc: '../../../images/icon/power1.png',
+        'user.power': that.data.user.power + 1,
+        'user.sun': that.data.user.sun + 2,
+        likenumber: 1
+      })
+
+      //调用云函数修改多个数据库集合
+      //暂时不考虑并发，多操作使用一个函数
+      wx.cloud.callFunction({
+        name: 'power',
+        data: {
+          type: 'power',
+          userid: that.data.user._id,
+        }
+      }).then(res => {
+        console.log(res)
+      }).catch(err => {
+        // handle error
+      })
+    }
   }
 })

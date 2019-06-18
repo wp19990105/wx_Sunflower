@@ -1,0 +1,58 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view>
+    <text class='name'>计划名称</text>
+    <input placeholder="给你的长期计划取一个响亮的名字吧" name='planName' class='panel planname' value='{{acceptname}}'/>
+  </view>
+  <view>
+    <text class='name'>计划时段</text>
+    <view class='chooseTime'>
+      <text>{{!beginDate[0] && !endDate[0] ? "点击右侧图标选择日期范围" : beginDate[0] + " 至 " + endDate[0]}}</text>
+
+
+      <image src='../../../../../images/icon/date.png' bindtap='showModal' id='0'></image>
+
+    </view>
+  </view>
+  <view>
+    <text class='name'>具体事项</text>
+    <view class='chooseTime'>
+      <view class='matter'>
+        <input placeholder="请输入事项名称" id='1' bindblur='getValue' value='{{acceptmatter[1]=="null"? matter[1]:acceptmatter[1]}}'></input>
+        <text>{{!beginDate[1] && !endDate[1] ? "点击右侧图标选择日期范围" : beginDate[1] + " 至 " + endDate[1]}}</text>
+      </view>
+      <image src='../../../../../images/icon/matter.png' bindtap='showModal' id='1'></image>
+    </view>
+  </view>
+  <view>
+    <block wx:for='{{matterNumber}}' wx:key="*this">
+      <view class='chooseTime'>
+        <view class='matter'>
+          <input placeholder="请输入事项名称" id='{{index+2}}' bindblur='getValue' value='{{acceptmatter[index+2]=="null"? matter[index+2]:acceptmatter[index+2]}}'></input>
+          <input value='{{!beginDate[index+2] && !endDate[index+2] ? "请选择日期范围" : beginDate[index+2] + " 至 " + endDate[index+2]}}' />
+        </view>
+        <image src='../../../../../images/icon/matter.png' bindtap='showModal' id='{{index+2}}' />
+      </view>
+    </block>
+  </view>
+  <view>
+    <image src='../../../../../images/icon/addmatter.png' class='add' bindtap='add'></image>
+  </view>
+  <view wx:if='{{!showModalStatus}}'>
+    <text class='name'>补充说明</text>
+    <textarea placeholder="备注一下你学习的资料或者一句话" name="remarks" class='remarks' value='{{acceptremarks}}'/>
+  </view>
+  <view class='show'>
+    <text>是否公开</text>
+    <switch checked name='show' />
+  </view>
+  <view>
+    <button form-type="submit" class="btn">创建</button>
+  </view>
+</form>
+<view>
+  <view class="modal_screen" wx:if="{{showModalStatus}}"></view>
+    <view  animation="{{animationData}}" class="animation" wx:if="{{showModalStatus}}">
+      <my-calendar start="{{beginDate[0]}}" stop="{{endDate[0]}}" bind:cancel="calendarCancel" bind:confirm="calendarConfirm" id='{{calendarid}}'></my-calendar>
+    </view>
+  
+</view>

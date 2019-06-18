@@ -26,11 +26,11 @@
   height: 64rpx;
   display: inline-block;
   overflow: hidden;
-  margin-left: 20rpx;
+  margin-left: 25px;
 }
 
 .userinfo-nickname {
   position: absolute;
-  left: 170rpx;
+  left: 160rpx;
   font-size: 38rpx;
 }

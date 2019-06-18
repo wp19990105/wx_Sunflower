@@ -75,27 +75,27 @@ Page({
         console.log(res)
         var time = Date.parse(new Date())
         const time1 = time - 86400000
-        var plans =[]
-        for(let i=0;i<res.data.length;i++){
-          var plansobj={}
-          plansobj._id=res.data[i]._id
+        var plans = []
+        for (let i = 0; i < res.data.length; i++) {
+          var plansobj = {}
+          plansobj._id = res.data[i]._id
           plansobj.begin = timeDate.time_date(res.data[i].begin)
           plansobj.end = timeDate.time_date(res.data[i].end)
           plansobj.name = res.data[i].name
-          if (time<res.data[i].begin){
+          if (time < res.data[i].begin) {
             //plansobj.result='未开始'
             plansobj.result = -1
-          } else if (time1 > res.data[i].end){
+          } else if (time1 > res.data[i].end) {
             //plansobj.result = '已结束'
             plansobj.result = 1
-          }else{
+          } else {
             //plansobj.result = '进行中'
             plansobj.result = 0
           }
           plans.push(plansobj)
         }
         this.setData({
-          plans:plans
+          plans: plans
         })
       })
   },
@@ -104,20 +104,42 @@ Page({
 
   //下面是左滑的函数
   /**
-  * cell绑定事件,删除触发
-  */
-  deleteAction: function (e) {
-    //拿到角标
-    var row = e.detail.row;
-    wx.showToast({
-      icon: 'none',
-      title: 'index=' + row,
+   * cell绑定事件,删除触发
+   */
+  deleteAction: function(e) {
+    console.log(e)
+    const that = this
+    wx.showModal({
+      title: '计划删除',
+      content: '计划删除后将不可恢复',
+      success(res) {
+        if (res.confirm) {
+          var id = e.detail.row;
+          const planid = id.substr(0, 32)
+          const planindex = id.substr(32)
+
+          //修改数据库
+          db.collection('plan').doc(planid).remove()
+            .then(console.log)
+            .catch(console.error)
+
+          //改变页面显示
+          that.data.plans.splice(planindex, 1)
+          var plans = that.data.plans
+          that.setData({
+            plans: plans
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
+
   },
   /**
    * cell绑定事件,滑动触发
    */
-  slideAction: function (e) {
+  slideAction: function(e) {
     //拿到角标
     console.log(e)
     var row = e.detail.row;
@@ -133,11 +155,12 @@ Page({
       lastSlideSender: slideSender
     })
   },
-  selectCellAction:function(e){
+  selectCellAction: function(e) {
     console.log(e)
-    const id=e.detail.row
+    var id = e.detail.row
+    id = id.substr(0, 32)
     wx.navigateTo({
-      url: 'planDetail/planDetail?id='+id,
+      url: 'planDetail/planDetail?id=' + id,
     })
   }
 })

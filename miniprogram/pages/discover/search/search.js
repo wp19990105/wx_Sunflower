@@ -75,6 +75,10 @@ Page({
             options: 'i',
           })
         })
+        .field({
+          _id:true,
+          name:true
+        })
         .get()
         .then(res => {
           //console.log(res)
@@ -83,5 +87,12 @@ Page({
           })
         })
     }
+  },
+  plandetails(e){
+    console.log(e)
+    const id=e.currentTarget.id
+    wx.navigateTo({
+      url: '../recommendPlan/recommendPlan?id='+id,
+    })
   }
 })

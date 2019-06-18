@@ -9,22 +9,25 @@ Page({
     plan: {},
     user: {},
     likesrc: '../../../images/icon/like.png',
-    likenumber: 0, //点赞次数
-    acceptsrc:'../../../images/icon/accept.png',
-    acceptnumber:0,  //采纳次数
-    collectsrc:'../../../images/icon/collect0.png',
-    collectnumber:0,  //收藏次数
-    planid:null,  //计划的id
-    userid:null   //计划主人的个人信息id
+    likenumber: 0, //点赞情况
+    acceptsrc: '../../../images/icon/accept.png',
+    acceptnumber: 0, //采纳情况
+    collectsrc: '../../../images/icon/collect0.png',
+    collectnumber: 0, //收藏情况
+    planid: null, //计划的id
+    userid: null //计划主人的个人信息id
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(e) {
-    console.log(e)
+   this.userinfo(e.id)
+
+
+    //console.log(e)
     this.setData({
-      planid:e.id
+      planid: e.id
     })
     this.loadplan(e.id)
   },
@@ -61,7 +64,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    const id=this.data.planid
+    this.loadplan(id)
   },
 
   /**
@@ -78,6 +82,7 @@ Page({
 
   },
   loadplan: function(e) {
+    //console.log(e)
     const that = this
     db.collection('plan').doc(e)
       .get()
@@ -88,14 +93,14 @@ Page({
           })
           .field({
             avatarUrl: true,
-            nickName: true
+            nickName: true,
           })
           .get()
           .then(res => {
-            console.log(res)
+            console.log(res)          
             that.setData({
               user: res.data[0],
-              userid: res.data[0]._id
+              userid: res.data[0]._id,
             })
           })
 
@@ -132,7 +137,7 @@ Page({
   like(e) {
     console.log(e)
     const that = this
-    if (that.data.likenumber == 0) {
+    if (e.currentTarget.id == '0') {
       that.setData({
         likesrc: '../../../images/icon/like1.png',
         'plan.like': that.data.plan.like + 1,
@@ -144,9 +149,10 @@ Page({
       wx.cloud.callFunction({
         name: 'addlikes',
         data: {
-          type:'like',
-          planid:that.data.planid,
-          userid:that.data.userid
+          type: 'like',
+          planid: that.data.planid,
+          userid: that.data.userid,
+          userselfid:that.data.userselfid
         }
       }).then(res => {
         console.log(res)
@@ -158,7 +164,7 @@ Page({
   accept(e) {
     console.log(e)
     const that = this
-    if (that.data.acceptnumber == 0) {
+    if (e.currentTarget.id == '0') {
       that.setData({
         acceptsrc: '../../../images/icon/accept1.png',
         'plan.accept': that.data.plan.accept + 1,
@@ -171,7 +177,8 @@ Page({
         data: {
           type: 'accept',
           planid: that.data.planid,
-          userid: that.data.userid
+          userid: that.data.userid,
+          userselfid: that.data.userselfid
         }
       }).then(res => {
         console.log(res)
@@ -180,13 +187,15 @@ Page({
       })
     }
     wx.navigateTo({
-      url: 'acceptplan/acceptplan?id='+that.data.planid,
+      url: '../../today/create/create?id=' + that.data.planid,
     })
   },
   collect(e) {
     console.log(e)
     const that = this
-    if (that.data.collectnumber == 0) {
+
+    //点击收藏，+1，修改数据库
+    if (e.currentTarget.id == '0') {
       that.setData({
         collectsrc: '../../../images/icon/collect1.png',
         'plan.collect': that.data.plan.collect + 1,
@@ -199,13 +208,107 @@ Page({
         data: {
           type: 'collect',
           planid: that.data.planid,
-          userid: that.data.userid
+          userid: that.data.userid,
+          userselfid: that.data.userselfid
         }
       }).then(res => {
         console.log(res)
       }).catch(err => {
         // handle error
       })
+    }
+    if (e.currentTarget.id == '1') {
+      that.setData({
+        collectsrc: '../../../images/icon/collect0.png',
+        'plan.collect': that.data.plan.collect - 1,
+        collectnumber: 0
+      })
+
+      //调用云函数，修改数据库
+      wx.cloud.callFunction({
+        name: 'cancelcollect',
+        data: {
+          planid: that.data.planid,
+          userid: that.data.userid,
+          userselfid: that.data.userselfid
+        }
+      }).then(res => {
+        console.log(res)
+      }).catch(err => {
+        // handle error
+      })
+    }
+  },
+  navigatePage(e) {
+    console.log(e)
+    const that = this
+    wx.redirectTo({
+      url: '../othersPage/othersPage?id=' + that.data.userid
+    })
+  },
+
+  userinfo(id){
+    // 
+    // wx.getStorage({
+    //   key: 'openid',
+    //   success(res) {
+    //     console.log(res)
+    //   }
+    // })
+    const that = this
+    //查询点赞、收藏、采纳情况
+    try {
+      var openid = wx.getStorageSync('openid')
+      if (openid) {
+        console.log(openid)
+        db.collection('userInfo').where({
+          _openid: openid
+        })
+          .field({
+            likeplan: true,
+            collectplan: true,
+            acceptplan: true
+          })
+          .get()
+          .then(res => {
+            console.log(res)
+            var likeinfo = res.data[0].likeplan.indexOf(id)
+            var collectinfo = res.data[0].collectplan.indexOf(id)
+            var acceptinfo = res.data[0].acceptplan.indexOf(id)
+            var likesrc = '../../../images/icon/like.png'
+            var likenumber = 0 //点赞情况
+            var acceptsrc = '../../../images/icon/accept.png'
+            var acceptnumber = 0 //采纳情况
+            var collectsrc = '../../../images/icon/collect0.png'
+            var collectnumber = 0 //收藏情况
+            if (likeinfo != -1) {
+              //console.log('点赞过')
+              var likesrc = '../../../images/icon/like1.png'
+              var likenumber = 1
+            }
+            if (collectinfo != -1) {
+              //console.log('收藏过')
+              var collectsrc = '../../../images/icon/collect1.png'
+              var collectnumber = 1
+            }
+            if (acceptinfo != -1) {
+              //console.log('采纳过')
+              var acceptsrc = '../../../images/icon/accept1.png'
+              var acceptnumber = 1
+            }
+            that.setData({
+              likesrc: likesrc,
+              likenumber: likenumber,
+              acceptsrc: acceptsrc,
+              acceptnumber: acceptnumber,
+              collectsrc: collectsrc,
+              collectnumber: collectnumber,
+              userselfid: res.data[0]._id
+            })
+          })
+      }
+    } catch (e) {
+      // Do something when catch error
     }
   }
 })

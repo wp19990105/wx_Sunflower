@@ -1,6 +1,6 @@
 <view class='search'>
-  <input focus='true' bindinput='search'></input>
+  <input focus='true' bindinput='search' class='search1'></input>
 </view>
-<view wx:for='{{plans}}'>
-{{item.name}}
+<view wx:for='{{plans}}' class='plan' wx:key='{{item._id}}' id='{{item._id}}' catchtap='plandetails'>
+  <text>{{item.name}}</text>
 </view>

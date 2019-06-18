@@ -2,10 +2,16 @@
   <view class='info'>
     <image class='userinfo-avatar' src='{{user.avatarUrl}}'></image>
     <text class='userinfo-nickname'>{{user.nickName}}</text>
+    <block wx:if='{{user.gender==0}}'>
+      <image src='../../images/icon/woman.png' class='sex'></image>
+    </block>
+    <block wx:if='{{user.gender==1}}'>
+      <image src='../../images/icon/man.png' class='sex'></image>
+    </block>
     <image src='../../images/icon/sun.png' class='sun'></image>
     <view class='money'>
-      <text>{{user.money}}</text>
-      <text>阳光</text>
+      <text class='money1'>{{user.sun}}</text>
+      <text class='money2'>阳光</text>
     </view>
   </view>
   <view class='motto' bindtap='updata'>
@@ -14,35 +20,35 @@
   <view class='numbers'>
     <view class='number'>
       <text>{{user.accept}}</text>
-      <text>采纳数</text>
+      <text>被采纳</text>
     </view>
     <view class='number'>
       <text>{{user.collect}}</text>
-      <text>收藏数</text>
+      <text>被收藏</text>
     </view>
     <view class='number'>
       <text>{{user.like}}</text>
-      <text>点赞数</text>
+      <text>被点赞</text>
     </view>
     <view class='number'>
       <text>{{user.power}}</text>
-      <text>助力数</text>
+      <text>被助力</text>
     </view>
   </view>
 </view>
 <view class='hr10'></view>
 <view style='display: flex'>
-  <view class='study'>
+  <view class='study' bindtap='study'>
     <image src='../../images/icon/record.png' class='icon'></image>
     <text>学习记录</text>
   </view>
-  <view class='study' style='left:90rpx'>
+  <view class='study' style='left:90rpx' bindtap='study'>
     <image src='../../images/icon/result.png' class='icon'></image>
     <text>学习周报</text>
   </view>
 </view>
 
-<view class='list'>
+<view class='list' bindtap='collect'>
   <image src='../../images/icon/collect.png' class='icon'></image>
   <text>我的收藏</text>
   <image src='../../images/icon/arrow.png' class='arrow'></image>
@@ -60,10 +66,10 @@
   <image src='../../images/icon/arrow.png' class='arrow'></image>
 </view>
 
-<button  open-type="share" class='share'>
-<view class='list'>
+<button open-type="share" class='share'>
+  <view class='list'>
     <image src='../../images/icon/share.png' class='icon'></image>
     <text>推荐给朋友</text>
     <image src='../../images/icon/arrow.png' class='arrow'></image>
-</view>
+  </view>
 </button>

@@ -79,7 +79,7 @@ Page({
   },
   navigate:function(e){
     console.log(e)
-    const id=e.target.id
+    const id=e.currentTarget.id
     if(id==0){
       wx.navigateTo({
         url: 'plan/plan'

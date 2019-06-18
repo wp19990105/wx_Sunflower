@@ -97,4 +97,16 @@ Page({
       url: 'introduce/introduce',
     })
   },
+  collect(e) {
+    wx.navigateTo({
+      url: 'collect/collect',
+    })
+  },
+  study(e){
+    wx.showToast({
+      title: '该功能将在下个版本与你见面~',
+      icon: 'none',
+      duration: 2800
+    })
+  }
 })

@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "计划详情",
+  "usingComponents": {},
+  "enablePullDownRefresh":true
 }

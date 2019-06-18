@@ -1,1 +1,4 @@
-/* miniprogram/pages/person/introduce/introduce.wxss */
+image {
+  width: 750rpx;
+  height: 667px;
+}

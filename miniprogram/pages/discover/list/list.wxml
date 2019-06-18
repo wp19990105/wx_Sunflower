@@ -1,2 +1,7 @@
-<!--miniprogram/pages/discover/list/list.wxml-->
-<text>miniprogram/pages/discover/list/list.wxml</text>
+
+<view wx:for='{{list}}' wx:key='{{item._id}}' bindtap='personalpage' id='{{item._id}}' class='list'>
+  <text class='index'>{{index+1}}</text>
+  <image src='{{item.avatarUrl}}' class='userinfo-avatar' />
+  <text class='name'>{{item.nickName}}</text>
+  <text class='score'>{{item.sun}}</text>
+</view>

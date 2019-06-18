@@ -1,1 +1,47 @@
-/* miniprogram/pages/discover/list/list.wxss */
+.sun {
+  background: #999;
+  border-radius: 5px;
+  color: white;
+  margin: 8px;
+  display: flex;
+  width: 80px;
+  height: 32px;
+  text-align: center;
+  align-items: center;
+  justify-items: cter;
+}
+
+.list {
+  margin-top: 6px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+  background-color: #fff;
+}
+
+.userinfo-avatar {
+  border-radius: 36px;
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 14px;
+}
+
+.name {
+  padding-left: 10px;
+}
+
+.score {
+  position: absolute;
+  right: 20px;
+  color: #ffa800;
+}
+
+.index {
+  font-size: 20px;
+  padding-left: 6px;
+}

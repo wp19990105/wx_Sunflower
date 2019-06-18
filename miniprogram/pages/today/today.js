@@ -6,6 +6,7 @@ Page({
     openid: null,
     plans: [],
     lastSlideSender: null, //记录上一个左滑的事项
+    id:0,//点击变色
   },
 
   /**
@@ -126,6 +127,7 @@ Page({
     } catch (e) {
       console.log('读取错误')
     }
+
   },
 
 
@@ -141,7 +143,7 @@ Page({
   deleteAction: function(e) {
     //拿到角标
     console.log(e)
-    const that=this
+    const that = this
     //获取计划的id与事项的id
     var id = e.detail.row;
     const planid = id.substr(0, 32)
@@ -200,6 +202,15 @@ Page({
     this.setData({
       lastSlideSender: slideSender
     })
+  },
+  selectCellAction(e) {
+    console.log(e)
+    const that = this
+    this.setData({
+      id: e.detail.row,
+    })
+
+
   }
 
 })

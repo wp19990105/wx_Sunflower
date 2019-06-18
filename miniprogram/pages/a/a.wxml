@@ -1,12 +1,8 @@
-<!--index.wxml-->
+<view class="sel-box">
 
+ <view wx:for="{{repContent}}" class="multi-selection">
+  <text>{{item.message}}</text>
 
-<!-- 
-itemColor: cell背景色
-deleteItemEvent:绑定删除事件
-slideItemEvent:绑定左滑动打开
-cellHeight:cell高度 
--->
-<slideitem id="slideitem-{{index}}" class='cell-class' row="{{index}}" itemColor="#fff" bind:deleteItemEvent='deleteAction' bind:slideItemEvent='slideAction' bind:selectItemEvent='selectCellAction' cellHeight="120rpx" >
-  <text style='width:100%;height:100%;line-height:120rpx;margin-left:40rpx'>{{data}}</text>
-</slideitem>
+  <image src="{{selectIndex[index].sureid? hasSelect : noSelect}}" class="multi-img" data-selectIndex="{{index}}" bindtap="selectRep" />
+ </view>
+</view>

@@ -15,32 +15,45 @@
 }
 
 .userinfo-nickname {
-  position: absolute;
-  left: 170rpx;
   font-size: 38rpx;
+  padding: 10px;
 }
 
-.sun{
+.sex {
+  width: 20px;
+  height: 20px;
+}
+
+.sun {
   width: 48px;
   height: 48px;
   position: absolute;
-  right: 40px;
+  right: 50px;
 }
+
 .money {
   display: flex;
   flex-direction: column;
   text-align: center;
   position: absolute;
-  right: 10px;
+  right: 18px;
 }
-
+.money1{
+  font-size:14px;
+  color:#ffa800
+}
+.money2{
+  color:#999999;
+  font-size:12px
+}
 .panel {
   flex-direction: column;
 }
 
 .motto {
-  margin-left: 10px;
+  margin-left: 30px;
   margin-top: 10px;
+  font-size:14px;
 }
 
 .numbers {
@@ -55,6 +68,10 @@
   width: 25%;
   text-align: center;
 }
+.number text{
+  color:#999999;
+  font-size:13px
+}
 
 .study {
   background-color: #fff;
@@ -67,9 +84,11 @@
   align-items: center;
   justify-content: center;
 }
-.study text{
-  padding-left:20px
+
+.study text {
+  padding-left: 20px;
 }
+
 .list {
   background-color: #fff;
   border-radius: 10px;
@@ -77,11 +96,21 @@
   display: flex;
   align-items: center;
   margin: 20rpx;
-  padding-left:10px;
+  padding-left: 10px;
 }
-.list text{
-  padding-left:20px
+.list1 {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 20rpx;
+  padding-left: 10px;
 }
+.list text {
+  padding-left: 20px;
+}
+
 .arrow {
   width: 30px;
   height: 30px;
@@ -97,7 +126,9 @@
   width: 30px;
   height: 30px;
 }
-.share{
-  width:750rpx;
-  padding-left:0
+
+.share {
+  width: 750rpx;
+  padding-left: 0;
+  padding-right:0;
 }

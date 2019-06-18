@@ -3,8 +3,21 @@
   width: 710rpx;
   background-color: #fff;
   border-radius: 5px;
-  height:35px;
-  border:1px solid #000000;
+  height: 40px;
+  border: 1px solid #a6a6a6;
   margin: 0 auto;
-  align-items:center;
+  align-items: center;
+}
+.search1{
+  padding-left:10px
+}
+
+.plan {
+  display: flex;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  height: 30px;
+  padding: 5px;
+  align-items: center;
 }

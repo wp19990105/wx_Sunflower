@@ -25,25 +25,25 @@
 
 <text class='title'>计划时段</text>
 <view class='panel date-day'>
-  <text class='text1'>{{plan.beginDate+'——'+plan.endDate}}</text>
+  <text class='text1'>{{plan.beginDate+'—'+plan.endDate}}</text>
   <text class='text2'>{{plan.day}}天</text>
 </view>
 
 <text class='title'>具体事项</text>
 <view class='panel matter' wx:for='{{plan.matters}}'>
   <view class='name-date'>
-    <text>{{item.name}}</text>
-    <text>{{item.beginDate+'——'+item.endDate}}</text>
+    <text class='name1'>{{item.name}}</text>
+    <text class='name2'>{{item.beginDate+'—'+item.endDate}}</text>
   </view>
   <view class='process'>
     <block wx:if='{{item.process==-1}}'>
-      <text style='color:blue'>未开始</text>
+      <text style='color:#257ccc;font-size:14px'>未开始</text>
     </block>
     <block wx:if='{{item.process==0}}'>
-      <text>进行中</text>
+      <text style='color:#007A38;font-size:14px'>进行中</text>
     </block>
     <block wx:if='{{item.process==1}}'>
-      <text style='color:red'>已结束</text>
+      <text style='color:#f31d1d;font-size:14px'>已结束</text>
     </block>
 
   </view>
@@ -64,8 +64,11 @@
       <text>未公开</text>
     </block>
   </view>
-  <view class='edit'>
-    <image src='../../../../images/icon/edit.png' />
-    <text>编辑计划</text>
+  <view wx:if='{{show}}'>
+  该功能暂时隐藏
+    <view class='edit' bindtap='navigateedit'>
+      <image src='../../../../images/icon/edit.png' />
+      <text>编辑计划</text>
+    </view>
   </view>
 </view>

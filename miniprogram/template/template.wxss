@@ -1,15 +1,16 @@
 .button{
   position: fixed;
-  right: 10px;
-  bottom: 10px;
+  right: 20px;
+  bottom: 20px;
   height: 96rpx;
   width: 96rpx;
+  z-index: 10;
 }
 .button image{
   width: 96rpx;
   height: 96rpx;
   border-radius: 50%;
-  background: #FFFFFF
+
 }
 .banners{
   width: 750rpx;

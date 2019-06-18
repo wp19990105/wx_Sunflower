@@ -1,0 +1,9 @@
+.plantext{
+   display: flex;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  height: 30px;
+  padding: 5px;
+  align-items: center;
+}

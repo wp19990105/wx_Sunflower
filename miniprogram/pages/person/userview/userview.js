@@ -1,4 +1,4 @@
-// miniprogram/pages/person/userview/user.view.js
+
 Page({
 
   /**
@@ -69,14 +69,21 @@ Page({
     db.collection('userView').add({
         // data 字段表示需新增的 JSON 数据
         data: {
-          view: e.e.detail.value.view
+          view: e.detail.value.view
         }
       })
       .then(res => {
         console.log(res)
-        wx.switchTab({
-          url: '../person',
+        wx.showToast({
+          title: '谢谢您的反馈~',
+          icon: 'success',
+          duration: 2000
         })
+        setTimeout(function () {
+          wx.switchTab({
+            url: '../person',
+          })
+        }, 2500)
       })
       .catch(console.error)
   }

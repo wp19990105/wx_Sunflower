@@ -23,11 +23,12 @@
 <view wx:for='{{plan}}' class='panel recommendPlan' id='{{item.plan_id}}' bindtap='navigatePlan'>
   <image src='{{item.avatarUrl}}' class='avatar' id='{{item.user_id}}' catchtap='navigatePersonal' />
   <view class='name'>
-    <text>{{item.planName}}</text>
-    <text>{{item.nickName}}</text>
+    <text class='name1'>{{item.planName}}</text>
+    <text class='name2'>{{item.nickName}}</text>
   </view>
+  
   <view class='like'>
-    <image src='../../images/icon/hot.png' />
+    <image src='../../images/icon/hot.png'/>
     <text>{{item.like}}</text>
   </view>
 </view>

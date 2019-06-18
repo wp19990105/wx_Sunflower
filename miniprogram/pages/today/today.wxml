@@ -7,15 +7,23 @@
   </view>
   <view wx:if='{{planNumber!=0}}'>
     <view wx:for='{{plans}}' wx:key="_id">
-      <text>{{item.planName}}</text>
+      <text class='plan'>{{item.planName}}</text>
       <view wx:if='{{item.mattersArr.length==0}}'>
-        <text>该计划今日暂无事项</text>
+        <text class='matterno'>暂无事项</text>
       </view>
       <view>
-        <slideitem id="slideitem-{{item.planid+item.matterid}}" class='cell-class' row="{{item.planid+item.matterid}}" itemColor="#fff" bind:deleteItemEvent='deleteAction' bind:slideItemEvent='slideAction' bind:selectItemEvent='selectCellAction' cellHeight="120rpx"
-          wx:for='{{item.mattersArr}}' wx:key="{{item.planid+item.matterid}}" word='完成' delcolor='#00FF00'>
-          <text style='width:100%;height:100%;line-height:120rpx;margin-left:40rpx'>{{item.name}}{{item.day}}天</text>
-        </slideitem>
+        <block wx:for='{{item.mattersArr}}' wx:key="{{item.planid+item.matterid}}">
+          <slideitem id="slideitem-{{item.planid+item.matterid}}" class='cell-class' row="{{item.planid+item.matterid}}" itemColor="#fff" bind:deleteItemEvent='deleteAction' bind:slideItemEvent='slideAction'  cellHeight="120rpx"
+            word='完成' delcolor='#1F9900'>
+           
+              <view class='matter-day'>
+                <text class='matter'>{{item.name}}</text>
+                <text class='day'>剩{{item.day}}天</text>
+              </view>
+            
+          </slideitem>
+          <view class='hr5'></view>
+        </block>
       </view>
     </view>
   </view>

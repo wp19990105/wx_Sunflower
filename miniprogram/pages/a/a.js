@@ -1,74 +1,33 @@
 Page({
+  /**
+   * 页面的初始数据
+   */
   data: {
-    delBtnWidth: 160,
-    data: [{ content: "1", right: 0 }, { content: "2", right: 0 }, { content: "3", right: 0 }, { content: "4", right: 0 }, { content: "5", right: 0 }, { content: "6", right: 0 }, { content: "7", right: 0 }, { content: "8", right: 0 }, { content: "9", right: 0 }, { content: "10", right: 0 }],
-    isScroll: true,
-    windowHeight: 0,
+    noSelect: '../../images/icon/collect0.png',
+    hasSelect: '../../images/icon/collect1.png',
+    repContent: [{ message: '广告内容' }, { message: '不友善内容' }, { message: '垃圾内容' }, { message: '违法违规内容' }, { message: '其他' }],
+    selectIndex: [
+      { sureid: false },
+      { sureid: false },
+      { sureid: false },
+      { sureid: false },
+      { sureid: false },
+    ],
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          windowHeight: res.windowHeight
-        });
-      }
-    });
-  },
-  drawStart: function (e) {
-    // console.log("drawStart");  
-    var touch = e.touches[0]
 
-    for (var index in this.data.data) {
-      var item = this.data.data[index]
-      item.right = 0
-    }
+  },
+
+  selectRep: function (e) {
+    let index = e.currentTarget.dataset.selectindex; //当前点击元素的自定义数据，这个很关键
+    let selectIndex = this.data.selectIndex;  //取到data里的selectIndex
+    selectIndex[index].sureid = !selectIndex[index].sureid;  //点击就赋相反的值
     this.setData({
-      data: this.data.data,
-      startX: touch.clientX,
+      selectIndex: selectIndex  //将已改变属性的json数组更新
     })
-
-  },
-  drawMove: function (e) {
-    var touch = e.touches[0]
-    var item = this.data.data[e.currentTarget.dataset.index]
-    var disX = this.data.startX - touch.clientX
-
-    if (disX >= 20) {
-      if (disX > this.data.delBtnWidth) {
-        disX = this.data.delBtnWidth
-      }
-      item.right = disX
-      this.setData({
-        isScroll: false,
-        data: this.data.data
-      })
-    } else {
-      item.right = 0
-      this.setData({
-        isScroll: true,
-        data: this.data.data
-      })
-    }
-  },
-  drawEnd: function (e) {
-    var item = this.data.data[e.currentTarget.dataset.index]
-    if (item.right >= this.data.delBtnWidth / 2) {
-      item.right = this.data.delBtnWidth
-      this.setData({
-        isScroll: true,
-        data: this.data.data,
-      })
-    } else {
-      item.right = 0
-      this.setData({
-        isScroll: true,
-        data: this.data.data,
-      })
-    }
-  },
-
-  delItem: function (e) {
-
   }
 })

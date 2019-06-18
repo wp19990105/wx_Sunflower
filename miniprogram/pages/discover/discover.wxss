@@ -1,14 +1,16 @@
 @import '../../template/template.wxss';
 
 .hr10 {
-  height: 10px;
+  height: 6px;
 }
-.plan-list{
+
+.plan-list {
   display: flex;
   align-items: center;
-  background-color:#ffffff;
-  height:100px
+  background-color: #fff;
+  height: 100px;
 }
+
 .plan {
   border-radius: 10px;
   width: 320rpx;
@@ -39,15 +41,16 @@
 }
 
 .search {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   position: relative;
-  left: 250px;
+  left: 245px;
 }
 
 .recommendPlan {
-  margin-top: 3px;
+  margin-top: 5px;
   align-items: center;
+  padding: 3px;
 }
 
 .avatar {
@@ -64,19 +67,31 @@
   background-color: #fff;
 }
 
+.name1 {
+  font-size: 16px;
+}
+
+.name2 {
+  font-size: 14px;
+  color: #257ccc;
+}
+
 .name text {
   display: block;
 }
 
 .like {
   position: absolute;
-  right: 20px;
+  right: 15px;
+  width: 50px;
 }
 
 .like image {
   width: 16px;
   height: 16px;
 }
-.like text{
-  color:#ff0000;
+
+.like text {
+  color: #f00;
+  padding-left: 5px;
 }

@@ -15,7 +15,8 @@
     "pages/discover/othersPage/othersPage",
     "pages/discover/search/search",
     "pages/discover/plan/planDetail/planDetail",
-    "pages/discover/recommendPlan/acceptplan/acceptplan"
+    "pages/person/collect/collect",
+    "pages/discover/plan/planDetail/updateplan/updateplan"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -1,3 +1,5 @@
+
+
 .name-number {
   flex-direction: column;
 }
@@ -9,19 +11,23 @@
 }
 
 .nametext {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .day {
   position: absolute;
-  right: 20px;
+  right: 15px;
   display: flex;
   align-items: center;
 }
 
 .day image {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
+}
+
+.day text {
+  font-size: 14px;
 }
 
 .numbers {
@@ -37,12 +43,13 @@
 }
 
 .title {
-  margin: 10px;
+  background: #999;
+  border-radius: 5px;
+  color: white;
+  margin: 8px;
   display: block;
-  background-color: #f00;
-  width: 100px;
-  padding: 10px;
   text-align: center;
+  width: 80px;
 }
 
 .date-day {
@@ -57,18 +64,28 @@
 .date-day .text2 {
   position: absolute;
   right: 20px;
+  margin-bottom: 6px;
+  padding: 4px;
 }
 
 .matter {
   padding-left: 10px;
   align-items: center;
+  margin-bottom: 6px;
+  padding:4px
 }
 
 .name-date {
   display: flex;
   flex-direction: column;
 }
-
+.name1{
+  font-size:16px
+}
+.name2 {
+  color: #808080;
+  font-size: 12px;
+}
 .process {
   position: absolute;
   right: 20px;
@@ -89,7 +106,7 @@
 .show {
   display: flex;
   flex-direction: column;
-  padding-left: 200rpx;
+  padding-left: 340rpx;
 }
 
 .edit {

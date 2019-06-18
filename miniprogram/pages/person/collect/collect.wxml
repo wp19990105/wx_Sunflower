@@ -1,0 +1,6 @@
+<view wx:if='{{plan==[]}}'>
+  <text>暂无收藏计划</text>
+</view>
+<view wx:for='{{plan}}' wx:key='{{item._id}}'>
+  <text class='plantext'>{{item.name}}</text>
+</view>

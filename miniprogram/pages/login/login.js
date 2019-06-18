@@ -27,7 +27,7 @@ Page({
           wx.cloud.callFunction({
             name: 'login',
             complete: res => {
-              //console.log(res)
+              console.log(res)
               wx.setStorage({
                 key: 'openid',
                 data: res.result.openid,
@@ -50,9 +50,13 @@ Page({
                       accept:0,
                       collect:0,
                       money:0,
+                      sun:0,
                       power:0,
                       like:0,
-                      motto:'点击修改个性签名'
+                      motto:'点击修改个性签名',
+                      likeplan:[],
+                      collectplan:[],
+                      acceptplan:[]
                     } 
                   }).then(res => {
                     //console.log(res)

@@ -68,8 +68,18 @@ Page({
       name: 'rankingList'
     }).then(res => {
       console.log(res)
+      this.setData({
+        list:res.result.data.data
+      })
     }).catch(err => {
 
+    })
+  },
+  personalpage(e){
+    console.log(e)
+    const id=e.currentTarget.id
+    wx.navigateTo({
+      url: '../othersPage/othersPage?id='+id,
     })
   }
 })

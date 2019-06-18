@@ -1,26 +1,26 @@
 <view>
   <block wx:for='{{plans}}' wx:key="{{item._id}}">
-    <slideitem id="slideitem-{{item._id}}" class='cell-class' row="{{item._id}}" itemColor="#fff" bind:deleteItemEvent='deleteAction' bind:slideItemEvent='slideAction' bind:selectItemEvent='selectCellAction' cellHeight="120rpx">
+    <slideitem id="slideitem-{{item._id+index}}" class='cell-class' row="{{item._id+index}}" itemColor="#fff" bind:deleteItemEvent='deleteAction' bind:slideItemEvent='slideAction' bind:selectItemEvent='selectCellAction' cellHeight="120rpx">
 
       <view class='plan'>
         <view class='name-date'>
           <text class='name'>{{item.name}}</text>
-          <text class='date'>{{item.begin}}——{{item.end}}</text>
+          <text class='date'>{{item.begin}}—{{item.end}}</text>
         </view>
         <view class='progress'>
           <view class='progress-time'>
             <image src='../../../images/icon/progress.png' />
-            <text>时间进度</text>
+
           </view>
 
           <block wx:if='{{item.result==-1}}'>
-            <text style='color:blue'>未开始</text>
+            <text style='color:#257ccc;font-size:14px'>未开始</text>
           </block>
           <block wx:if='{{item.result==0}}'>
-            <text>进行中</text>
+            <text style='color:#007A38;font-size:14px'>进行中</text>
           </block>
           <block wx:if='{{item.result==1}}'>
-            <text style='color:red'>已结束</text>
+            <text style='color:#f31d1d;font-size:14px'>已结束</text>
           </block>
         </view>
       </view>

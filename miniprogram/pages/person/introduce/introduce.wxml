@@ -1,2 +1,3 @@
-<!--miniprogram/pages/person/introduce/introduce.wxml-->
-<text>这是我们的介绍</text>
+<view>
+  <image src='../../../images/introduce.png'></image>
+</view>

@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText":"今天",
   "usingComponents": {
     "slideitem": "../../component/slideitem/slideitem"
   }

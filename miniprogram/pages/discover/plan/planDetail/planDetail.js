@@ -6,14 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    show:false  //暂时隐藏修改功能
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-    //console.log(e)
+    console.log(e)
+    this.setData({
+      id:e.id
+    })
     this.loadplan(e.id)
   },
 
@@ -82,7 +85,7 @@ Page({
       if(spareday<0){
         var planSpareday='已结束'
       }else{
-        var planSpareday='剩余'+spareday+'天'
+        var planSpareday='剩'+spareday+'天'
       }
       plan.planSpareday = planSpareday
       plan.beginDate = timeDate.time_date(data.beginTime[0])
@@ -113,6 +116,12 @@ Page({
       this.setData({
         plan:plan
       })
+    })
+  },
+  navigateedit(e){
+    const that=this
+    wx.navigateTo({
+      url: 'updateplan/updateplan?id='+that.data.id,
     })
   }
 })

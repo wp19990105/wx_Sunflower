@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-calendar": "../../../../../component/My-calendar/my-calendar"
+  },
+  "navigationBarTitleText": "修改计划"
+}

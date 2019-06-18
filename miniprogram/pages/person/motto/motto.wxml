@@ -2,6 +2,6 @@
 
 <textarea placeholder='请输入个性签名' name='motto'/>
 
-    <button form-type="submit">确定</button>
+    <button form-type="submit" type='primary'>确定</button>
 
 </form>

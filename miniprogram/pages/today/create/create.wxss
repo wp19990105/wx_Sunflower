@@ -6,6 +6,7 @@
   border-radius: 5px;
   margin: 0 auto;
   align-items: center;
+  margin-bottom: 6px;
 }
 
 .chooseTime image {
@@ -15,17 +16,26 @@
   right: 20px;
 }
 
+.chooseTime text {
+  color: #808080;
+  font-size: 12px;
+}
+
 .btn {
   position: fixed;
   bottom: 0px;
   width: 750rpx;
-  background-color: #f00;
   color: #fff;
 }
 
 .matter {
   display: flex;
   flex-direction: column;
+}
+
+.matter text {
+  color: #808080;
+  font-size: 12px;
 }
 
 .add {
@@ -54,15 +64,13 @@
   bottom: 0;
   left: 0;
   z-index: 10;
-  background: #fff;
 }
 
 .name {
   background: #999;
   border-radius: 5px;
   color: white;
-  margin: 10px 0 0 10px;
-  padding: 10px;
+  margin: 8px;
   display: block;
   text-align: center;
   width: 80px;
@@ -71,15 +79,21 @@
 .planname {
   padding: 10px 0;
 }
-.remarks{
+
+.remarks {
   width: 710rpx;
   background-color: #fff;
   border-radius: 5px;
   margin: 0 auto;
 }
-.show{
-  margin-bottom:80px
+
+.show {
+  margin-bottom: 80px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
 }
-input{
-  width:300px
+
+input {
+  width: 300px;
 }
