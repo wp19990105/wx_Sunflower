@@ -5,10 +5,21 @@
 
 ###### “今天”的实现思路
 ![首页思路](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E4%BB%8A%E5%A4%A9.jpg)
-#### “发现”的实现思路
+###### “发现”的实现思路
 ![“发现”思路](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E5%8F%91%E7%8E%B0.jpg)
+###### “计划详情”的实现思路
+![“详情”思路](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E8%AE%A1%E5%88%92%E8%AF%A6%E6%83%85.jpg)
 
 - 架构图
+
+###### 信息架构
+![信息架构](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E4%BF%A1%E6%81%AF%E6%9E%B6%E6%9E%84.png)
+###### 功能结构
+![功能结构](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E5%8A%9F%E8%83%BD%E7%BB%93%E6%9E%84.png)
+
 - 流程图
+
+###### “计划详情”的实现思路
+![“详情”思路](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E8%AE%A1%E5%88%92%E8%AF%A6%E6%83%85.jpg)
 ## 3.项目效果图例
 ## 4.源码链接
