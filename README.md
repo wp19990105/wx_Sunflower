@@ -24,6 +24,10 @@
 ###### 主要功能流程
 ![主要功能流程](https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 ## 3.项目效果图例
+<div align="center">
+  <img src="https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E9%A1%B9%E7%9B%AE%E6%A0%B7%E4%BE%8B%E5%9B%BE/%E4%BB%8A%E5%A4%A9.jpg"  width=200" >
+  <img src="https://github.com/wp19990105/wx_Sunflower/blob/%E5%90%91%E6%97%A5%E8%91%B5/image/%E9%A1%B9%E7%9B%AE%E6%A0%B7%E4%BE%8B%E5%9B%BE/%E5%8F%91%E7%8E%B0.jpg" width="200" >
+ </div>
 
 ## 4.源码链接
 [https://github.com/wp19990105/wx_Sunflower](https://github.com/wp19990105/wx_Sunflower)
